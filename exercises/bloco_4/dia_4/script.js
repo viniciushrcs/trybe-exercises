@@ -29,6 +29,7 @@
 
 // maiorValor([2, 3, 6, 7, 10, 1])
 
+
 function indiceDoMaior(numeros) {
     let indiceMaior = 0;
     for (let indice in numeros) {
@@ -39,7 +40,7 @@ function indiceDoMaior(numeros) {
     return indiceMaior;
   }
   
-  console.log(indiceDoMaior([2, 3, 6, 7, 10, 1])); //4
+  console.log(indiceDoMaior([2, 3, 6, 7, 10, 1])); 
 
 
 
@@ -102,6 +103,8 @@ function indiceDoMaior(numeros) {
 // }
 
 // maiorRepete ([2, 3, 2, 5, 8, 2, 3, 3, 3, 4, 5, 4, 3, 4, 2, 2, 3, 3])
+
+
 
 // Exercício 6
 //Crie uma função que receba um número inteiro N e retorne o somatório de todos os números de 1 até N.
