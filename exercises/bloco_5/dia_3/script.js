@@ -45,3 +45,22 @@ function addButtonHolidays (buttonName){
 }
 
 addButtonHolidays('Feriados');
+
+
+function changeColorHolidays () {
+    let getHolidays = document.querySelectorAll('.holiday');
+    let getButtonHolidays = document.querySelector('#btn-holiday');
+    let backgroundColor = 'rgb(238, 238, 238)';
+    let setNewColor = 'white'
+    
+    getButtonHolidays.addEventListener('click', function(){
+        for (let index in getHolidays){
+           if (getHolidays[index].style.backgroundColor === setNewColor) {
+            getHolidays[index].style.backgroundColor = backgroundColor
+        } else {
+            getHolidays[index].style.backgroundColor = setNewColor;
+        }
+    }
+    })
+}
+changeColorHolidays();
