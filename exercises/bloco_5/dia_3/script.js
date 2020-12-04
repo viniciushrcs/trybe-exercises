@@ -16,22 +16,32 @@ function createDaysOfTheWeek() {
 let dezDays = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 
 let dezDaysList = document.querySelector('#days');
+let getButtonsContainer = document.querySelector('.buttons-container');
 
 function addDays(daysArray){
     for (let index in daysArray){
         let day = daysArray[index];
         let daysList = document.createElement('li');
         daysList.innerHTML = day;
-        daysList.className = 'day'
+        daysList.className = 'day';
         dezDaysList.appendChild(daysList);
 
         if (day === 24 || day === 31){
-            daysList.className += ' holiday'
+            daysList.className += ' holiday';
         } else if (day === 4 || day === 11 || day === 18) {
-            daysList.className += ' friday'
+            daysList.className += ' friday';
         } else if (day === 25){
-            daysList.className += ' holiday friday'
+            daysList.className += ' holiday friday';
         }
     }
 }
 addDays(dezDays);
+
+function addButtonHolidays (buttonName){
+    let buttonHolidays = document.createElement('button');
+    buttonHolidays.id = 'btn-holiday'
+    buttonHolidays.innerHTML = buttonName
+    getButtonsContainer.appendChild(buttonHolidays);
+}
+
+addButtonHolidays('Feriados');
