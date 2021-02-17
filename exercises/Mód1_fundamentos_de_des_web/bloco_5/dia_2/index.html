@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício 5.2</title>
+    <style>
+      div {
+        border-color: black;
+        border-style: solid;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        let titulo = document.createElement('h1');
+        titulo.innerText = 'Exerício 5.2 - JavaScript'
+        document.querySelector('body').appendChild(titulo);
+        console.log(titulo)
+
+        let divMain = document.createElement('div');
+        divMain.className = 'main-content';
+        document.querySelector('body').appendChild(divMain);
+
+        let divCenter = document.createElement('div');
+        divCenter.className = 'center-content';
+        document.querySelector('div.main-content').appendChild(divCenter);
+
+        let paragraph = document.createElement('p');
+        paragraph.innerText = 'Algum texto qualquer lorem ipsum';
+        document.querySelector('div.center-content').appendChild(paragraph);
+
+        let divLeft = document.createElement('div');
+        divLeft.className = 'left-content';
+        document.querySelector('div.main-content').appendChild(divLeft);
+
+        let divRight = document.createElement('div');
+        divRight.className = 'right-content';
+        document.querySelector('div.main-content').appendChild(divRight);
+
+        let image = document.createElement('img');
+        image.className = 'small-image';
+        image.src = 'https://picsum.photos/200';
+        document.querySelector('div.left-content').appendChild(image);
+
+        let list1To10 = document.createElement('ul');
+        list1To10.className = 'list-1-to-10';
+        divRight.appendChild(list1To10);
+
+
+        let listElements = ['um', 'dois', 'tres', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
+        
+        for (let index in listElements){
+          let listLi = document.createElement('li');
+          listLi.innerText = listElements[index];
+          listLi.className = 'list-item'
+          list1To10.appendChild(listLi);
+        }
+        
+        let h3_1 = document.createElement('h3');
+        let h3_2 = document.createElement('h3');
+        let h3_3 = document.createElement('h3');
+
+        document.querySelector('div.main-content').appendChild(h3_1);
+        document.querySelector('div.main-content').appendChild(h3_2);
+        document.querySelector('div.main-content').appendChild(h3_3);
+
+        titulo.className = 'title';
+
+        h3_1.className = 'description';
+        h3_2.className = 'description';
+        h3_3.className = 'description';
+
+        let divMainContent = document.querySelector('div.main-content');
+        divMainContent.removeChild(divLeft);
+
+        divRight.style = 'margin-right: auto'
+
+        let parent = document.querySelector('div.center-content').parentNode;
+        parent.style.backgroundColor = 'green'
+
+        let resgateLista = document.getElementsByClassName('list-item')
+        console.log(resgateLista)
+        
+        list1To10.lastChild.remove();
+        list1To10.lastChild.remove();
+        
+    
+
+    </script>
+  </body>
+</html>
